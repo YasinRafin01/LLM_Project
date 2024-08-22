@@ -13,6 +13,7 @@ class Command(BaseCommand):
         properties = Property.objects.all()
 
         for property in properties:
+            self.stdout.write(self.style.SUCCESS(f'Processing Started for property id {property.id}:{property.title}'))
             original_title = property.title
             original_description = property.description
             # Rewrite title and description
@@ -35,7 +36,7 @@ class Command(BaseCommand):
                     rewritten_text += result.get('response', '')
 
             # Debugging: Print the rewritten text
-            self.stdout.write(self.style.SUCCESS(f"Rewritten text for property {property.id}: {rewritten_text}"))
+            #self.stdout.write(self.style.SUCCESS(f"Rewritten text for property {property.id}: {rewritten_text}"))
 
             # Now that we have the complete rewritten text, we can process it
             new_title, new_description = self.parse_rewritten_text(rewritten_text)
