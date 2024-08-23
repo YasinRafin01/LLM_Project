@@ -76,7 +76,7 @@ This Django CLI application rewrites property information using Ollama and store
       - `settings.py`
       - `urls.py`
       - `wsgi.py`
-  - `Hotel_info/`
+  - `rewriter/`
       - `management/`
         - `commands/`
            - `rewrite_properties.py`
