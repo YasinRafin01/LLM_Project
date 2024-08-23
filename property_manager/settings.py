@@ -17,17 +17,8 @@ import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# LLM_path=os.path.abspath(
-#     os.path.join(BASE_DIR, "./Django-main")
-# )
-# if os.path.exists(LLM_path):
-#     sys.path.append(LLM_path)
-# else:
-#     print("warning")
 
-
-
-sys.path.append('../Django-main')
+sys.path.append('django_project_directory')
 # print(sys.path)
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
@@ -97,13 +88,14 @@ WSGI_APPLICATION = 'property_manager.wsgi.application'
 # }
 
 DATABASES = {
-"default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "OPTIONS": {
-            "service": "my_service",
-         
-},
-}
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'django_db_name',
+        'USER': 'your_db_user',
+        'PASSWORD': 'your_db_password',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    }
 }
 
 # Password validation
