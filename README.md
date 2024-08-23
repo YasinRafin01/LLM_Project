@@ -45,7 +45,7 @@ This Django CLI application rewrites property information using Ollama and store
    DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'your_db_name',
+        'NAME': 'django_db_name',
         'USER': 'your_db_user',
         'PASSWORD': 'your_db_password',
         'HOST': 'localhost',
