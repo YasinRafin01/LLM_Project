@@ -38,23 +38,21 @@ This Django CLI application rewrites property information using Ollama and store
    ```
    sys.path.append('Django_project_path')
    ```
-5. Set up the PostgreSQL database and update the `DATABASES` configuration in `settings.py` this set up should contain the similar 
+5. Set up the PostgreSQL database and update the `DATABASES` configuration in 
+  `settings.py` this set up should contain the similar 
    database used in Django.
-   
-   For Django Database configuration following steps required
-   - Open Linux/Mac Terminal and type
-     ```
-     nano ~/.pg_service.conf
-     ```
-   - Then put the following configuration, Save and exit
-     ```
-     [my_service]
-     host=localhost
-     user=postgres
-     dbname= django_database_name
-     port= your_port_number
-     password= your_password
-     ```
+   ```
+   DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'your_db_name',
+        'USER': 'your_db_user',
+        'PASSWORD': 'your_db_password',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    }
+}
+   ```
 6. Run migrations:
    ```
    python manage.py makemigrations
