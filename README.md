@@ -14,7 +14,10 @@ This Django CLI application rewrites property information using Ollama and store
 - Django 3.2+
 - PostgreSQL
 - Ollama
--  gemma2:2b
+- gemma2:2b
+   - ```
+     ollama run gemma2:2b
+     ``` 
 
 ## Installation
 
