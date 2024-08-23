@@ -75,24 +75,29 @@ class Command(BaseCommand):
 
 
     def parse_rewritten_text(self, text):
+        # Regular expression to remove unusual symbols
+        def clean_text(input_text):
+            return re.sub(r'[^A-Za-z0-9\s,.:;!?\'"-]', '', input_text)
+
         lines = text.split('\n')
         new_title = ''
         new_description = ''
         capture_title = False
         capture_description = False
-        
+
         for line in lines:
             if 'Title:' in line:
                 capture_title = True
                 capture_description = False
-                new_title = line.replace('Title:', '').strip()
+                new_title = clean_text(line.replace('Title:', '').strip())
             elif 'Description:' in line:
                 capture_description = True
                 capture_title = False
-                new_description = line.replace('Description:', '').strip()
+                new_description = clean_text(line.replace('Description:', '').strip())
             elif capture_title:
-                new_title += ' ' + line.strip()
+                new_title += ' ' + clean_text(line.strip())
             elif capture_description:
-                new_description += ' ' + line.strip()
+                new_description += ' ' + clean_text(line.strip())
 
         return new_title.strip(), new_description.strip()
+
