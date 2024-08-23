@@ -51,7 +51,7 @@ This Django CLI application rewrites property information using Ollama and store
         'HOST': 'localhost',
         'PORT': '5432',
     }
-}
+   }
    ```
 6. Run migrations:
    ```
