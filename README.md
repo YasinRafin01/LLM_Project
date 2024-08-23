@@ -69,9 +69,29 @@ This Django CLI application rewrites property information using Ollama and store
 
 ## Project Structure
 
-- `properties/`: Django app containing models and management commands
-- `properties/models.py`: Defines the Property and PropertySummary models
-- `properties/management/commands/`: Contains the custom management commands
+- `LLM_Project/`
+  - `property_manager/` 
+      - `__init__.py`
+      - `asgi.py`
+      - `settings.py`
+      - `urls.py`
+      - `wsgi.py`
+  - `Hotel_info/`
+      - `management/`
+        - `commands/`
+           - `rewrite_properties.py`
+      - `migrations/`
+         - `__init__.py`   
+      - `__init__.py` 
+      - `admin.py`
+      - `apps.py`
+      - `models.py` 
+      - `tests.py` 
+      - `views.py`
+  - `.gitignore`
+  - `manage.py`
+  - `requirements.txt`
+
 
 ## Ollama Integration
 
