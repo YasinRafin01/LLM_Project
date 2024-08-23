@@ -71,6 +71,7 @@ class Command(BaseCommand):
             )
 
             self.stdout.write(self.style.SUCCESS(f'Successfully processed property {property.id}'))
+            self.stdout.write(self.style.SUCCESS(f'-------------------------------------------------'))
 
 
     def parse_rewritten_text(self, text):
