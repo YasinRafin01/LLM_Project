@@ -3,6 +3,7 @@ from Hotel_info.models import Property
 from rewriter.models import PropertySummary
 import requests
 import json
+import re
 
 class Command(BaseCommand):
     help = 'Rewrites property information and generates summaries using Ollama with gemma2:2b model'
